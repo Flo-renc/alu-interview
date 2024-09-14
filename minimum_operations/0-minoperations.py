@@ -10,7 +10,7 @@ text file starting with a single 'H'. The only operations allowed are:
     1. Copy All
     2. Paste
 
-    The solution is based on breaking down the problem using prime 
+    The solution is based on breaking down the problem using prime
     factorizationto ensure the least number of operations
 
     Functions:
