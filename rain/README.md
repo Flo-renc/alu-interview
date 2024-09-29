@@ -1,0 +1,1 @@
+This project involves calculating how much rainwater will be retained between walls of varying heights, represented as a list of non-negative integers. Each integer in the list represents the height of a wall segment with a unit width of 1. The goal is to compute the total water retained after it rains, based on the walls' configuration.
