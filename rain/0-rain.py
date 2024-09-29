@@ -23,20 +23,22 @@ def rain(walls):
     if not walls or len(walls) < 3:
         return 0
 
-    n = len(walls)
-    leftMax = [0] * n
-    rightMax = [0] * n
-
-    leftMax[0] = walls[0]
-    for i in range(1, n):
-        leftMax[1] = max(leftMax[i - 1], walls[1])
-
-    rightMax[-1] = walls[-1]
-    for i in range(n -2, -1, -1):
-        rightMax[i] = max(rightMax[i + 1], walls[i])
-
+    left_max, right_max = 0, 0
+    left, right = 0, len(walls) - 1
     total_retention = 0
-    for i in range(n):
-        total_retention += max(0, min(leftMax[i], rightMax[i]) - walls[i])
+
+    while left <= right:
+        if walls[left] <= walls[right]:
+            if walls[left] >= left_max:
+                left_max = walls[left]
+            else:
+                total_retention += left_max - walls[left]
+            left += 1
+        else:
+            if walls[right] >= right_max:
+                right_max = walls[right]
+            else:
+                total_retention += right_max - walls[right]
+            right -= 1
 
     return total_retention
