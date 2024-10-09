@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""this function generates a pascals traingle """
+
+
 def pascal_triangle(n):
     """
     generates pascal's triangle of height n 
